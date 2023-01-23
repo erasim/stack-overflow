@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 
 import userRoutes from './routes/users.js'
+import questionRoutes from './routes/Questions.js'
 const app =expess()
 app.use(expess.json({limit:"30mb", extended:true }))
 app.use(expess.urlencoded({limit:"30mb", extended:true }))
@@ -12,6 +13,7 @@ app.get('/', (req, res)=>{
   res.send("this is the stack overflow api ")
 })
 app.use('/user', userRoutes)
+app.use('/questions', questionRoutes)
 // app.use('/user/*', (req, res)=>{  res.send("this is the stack overflow api ")})
 const PORT = process.env.PORT || 5000
 

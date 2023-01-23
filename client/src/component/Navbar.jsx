@@ -1,4 +1,4 @@
-import {Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import logo from "../assets/logo.png";
 import search from "../assets/search.svg";
 import Avatar from "../component/Avatar/Avatar";
@@ -9,10 +9,16 @@ import { setCurrrentUser } from "../action/currentUser";
 
 function Navbar() {
 	const dispatch =useDispatch()
+	const navigate = useNavigate()
 	const User = useSelector((state)=>(state.currentUserReducer));
+	console.log("user profie=>" , User);
 	useEffect(()=>{
     dispatch(setCurrrentUser(JSON.parse(localStorage.getItem('Profile'))))
 	},[dispatch])
+	const logout = () => {
+		localStorage.removeItem('Profile');
+		navigate(0);
+	  };
 	return (
 		<nav className="main-nav">
 			<div className='navbar'>
@@ -36,7 +42,7 @@ function Navbar() {
 				<Link to='Auth' className='nav-item nav-links'>Log in</Link>
 				:<>
 			M
-			<button className='nav-item nav-links'>Logout</button>
+			<button className='nav-item nav-links' onClick={logout}>Logout</button>
 				</>
         }    
 			</div> 

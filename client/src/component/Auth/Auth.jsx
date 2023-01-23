@@ -9,7 +9,9 @@ import {useNavigate} from 'react-router-dom'
 
 
 
+
 const Auth = () => {
+	
 	const [isSignup, setIsSignup] = useState(false);
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
@@ -30,7 +32,6 @@ const Auth = () => {
 			if(isSignup){
 			if(!name){
 				alert("Enter a name to Continue")
-
 			}
 		
 			dispatch(signup({name, email,password}, navigate));
@@ -39,7 +40,11 @@ const Auth = () => {
 			dispatch(login({email,password}, navigate));
 			
 		}
-	}
+	}    
+
+
+
+
 	return (
 		<div className='auth'>
 			<section className='auth-section'>
@@ -113,7 +118,6 @@ const Auth = () => {
 					</p>
 				</div>
 			</section>
-			<h1>This is login page</h1>
 		</div>
 	);
 };

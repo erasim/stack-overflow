@@ -6,23 +6,28 @@ import './AskQuestion.css'
 const AskQuestion = () => {
      const initialValues = { questionTitle: '', questionBody: '', questionTags: [], userPosted: '' }
      let navigate = useNavigate();
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
     const [ questionData, setQuestionData ] = useState(initialValues)
     const [ questionTitle, setQuestionTitle ] = useState('')
     const [ questionBody, setQuestionBody ] = useState('')
     const [ questionTags, setQuestionTags ] = useState([])
-    // const user = useSelector((state) => (state.currentUserReducer))
-    const user='asim';
+    const user = useSelector((state) => (state.currentUserReducer))
+   
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        
         console.log({ ...questionData, questionTags, userPosted: "manoj"})
-        // dispatch(askQuestion({ questionTitle, questionBody, questionTags, userPosted: user.result.name }, history ))
+
+        dispatch(AskQuestion({ questionTitle, questionBody, questionTags, userPosted: user.result.name }, navigate ))
     }
 
     const handleEnter = (e) => {
+        e.preventDefault()
+        
         if(e.key === 'Enter'){
+            
             setQuestionBody(questionBody + "\n")
         }
     }
@@ -39,13 +44,14 @@ const AskQuestion = () => {
                         <div className="ask-form-container">
                             <label htmlFor="ask-ques-Title">
                                 <h4>Title</h4>
+                                <h1>{questionBody  }</h1>
                                 <p>Be specific and imagine you’re asking a question to another person</p>
-                                <input type="text" name='questionTitle' id='ask-ques-Title' onChange={e => setQuestionTitle(e.target.value)} placeholder='e.g. Is there an R function for finding the index of an element in a vector?'/>
+                                <input type="text" name='questionTitle' id='ask-ques-Title' onChange={(e) => setQuestionTitle(e.target.value)} placeholder='e.g. Is there an R function for finding the index of an element in a vector?'/>
                             </label>
                             <label htmlFor="ask-ques-Body">
                                 <h4>Body</h4>
                                 <p>Include all the information someone would need to answer your question</p>
-                                <textarea id="ask-ques-Body" rows="10" name='questionBody' onChange={(e) => setQuestionBody(e.target.value)} onKeyPress={handleEnter}></textarea>
+                                <textarea id="ask-ques-Body" rows="10" name='questionBody' onChange={(e) => setQuestionBody(e.target.value)} ></textarea>
                             </label>
                             <label htmlFor="ask-ques-Tags">
                                 <h4>Tags</h4>
