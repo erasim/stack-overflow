@@ -6,7 +6,7 @@
   "type": "module",
 
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon --inspect index.js"
   },
   "author": "asim zaidi",
   "license": "ISC",

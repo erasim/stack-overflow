@@ -11,7 +11,6 @@ function Navbar() {
 	const dispatch =useDispatch()
 	const navigate = useNavigate()
 	const User = useSelector((state)=>(state.currentUserReducer));
-	console.log("user profie=>" , User);
 	useEffect(()=>{
     dispatch(setCurrrentUser(JSON.parse(localStorage.getItem('Profile'))))
 	},[dispatch])
@@ -41,7 +40,7 @@ function Navbar() {
 				{User === null? 
 				<Link to='Auth' className='nav-item nav-links'>Log in</Link>
 				:<>
-			M
+			<Avatar/>{(User.result.name).charAt(0).toUpperCase()+(User.result.name).slice(1)}
 			<button className='nav-item nav-links' onClick={logout}>Logout</button>
 				</>
         }    

@@ -1,36 +1,37 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import './AskQuestion.css'
+import {useNavigate} from "react-router-dom"
+import { askQuestion } from '../../action/questions'
+
 
 const AskQuestion = () => {
-     const initialValues = { questionTitle: '', questionBody: '', questionTags: [], userPosted: '' }
-     let navigate = useNavigate();
+    //  const initialValues = { questionTitle: '', questionBody: '', questionTags: [], userPosted: '' }
+     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const [ questionData, setQuestionData ] = useState(initialValues)
+    // const [ questionData, setQuestionData ] = useState(initialValues)
     const [ questionTitle, setQuestionTitle ] = useState('')
     const [ questionBody, setQuestionBody ] = useState('')
     const [ questionTags, setQuestionTags ] = useState([])
     const user = useSelector((state) => (state.currentUserReducer))
+
    
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        
-        console.log({ ...questionData, questionTags, userPosted: "manoj"})
-
-        dispatch(AskQuestion({ questionTitle, questionBody, questionTags, userPosted: user.result.name }, navigate ))
+      
+        dispatch(askQuestion({ questionTitle, questionBody, questionTags, userPosted: user.result.name }, navigate ))
     }
 
-    const handleEnter = (e) => {
-        e.preventDefault()
+    // const handleEnter = (e) => {
+    //     e.preventDefault()
         
-        if(e.key === 'Enter'){
+    //     if(e.key === 'Enter'){
             
-            setQuestionBody(questionBody + "\n")
-        }
-    }
+    //         setQuestionBody(questionBody + "\n")
+    //     }
+    // }
 
     return (
         <>
@@ -44,7 +45,7 @@ const AskQuestion = () => {
                         <div className="ask-form-container">
                             <label htmlFor="ask-ques-Title">
                                 <h4>Title</h4>
-                                <h1>{questionBody  }</h1>
+                            
                                 <p>Be specific and imagine you’re asking a question to another person</p>
                                 <input type="text" name='questionTitle' id='ask-ques-Title' onChange={(e) => setQuestionTitle(e.target.value)} placeholder='e.g. Is there an R function for finding the index of an element in a vector?'/>
                             </label>

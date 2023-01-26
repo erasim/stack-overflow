@@ -10,14 +10,14 @@ import Avatar from '../Avatar/Avatar'
 
 const DisplayAnswer = ({question}) => {
 
-    // const dispatch = useDispatch()
-    // const location = useLocation()
+    const dispatch = useDispatch()
+    const location = useLocation()
     // const url = "http://localhost:3000"
     const url = "/";
     const { id } = useParams()
     console.log("id", id);
-    // const User = useSelector((state) => state.currentUserReducer)
-    const User ='1';
+    const User = useSelector((state) => state.currentUserReducer)
+   
     console.log(question)
     // const handleCopy = () => {
     //     copy(url + location.pathname)
