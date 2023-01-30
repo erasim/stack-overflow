@@ -20,7 +20,7 @@ app.use('/questions', questionRoutes)
 app.use('/answer', answerRoutes)
 // app.use('/user/*', (req, res)=>{  res.send("this is the stack overflow api ")})
 const PORT = process.env.PORT || 5000
-const CONNECTION_URL =process.env.ATLAS_URI
+const CONNECTION_URL =process.env.MONGODB_URI
 
 // ==========VERCEL DEPLOY================
 

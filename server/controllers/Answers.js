@@ -14,7 +14,7 @@ export const postAnswer = async (req, res) => {
 
 	try {
         const updatedQuestion = await Questions.findByIdAndUpdate(_id, {
-            $Set: { answers: [{ answerBody, userAnswered, userId }] },
+            $addToSet: { answr: [{ answerBody, userAnswered, userId }] },
           });
 		res.status(200).json(updatedQuestion);
 	} catch (error) {

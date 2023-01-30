@@ -14,14 +14,14 @@ const QuestionSchema = mongoose.Schema({
 		type: [String],
 		required: "Question must have Tags",
 	},
-	noOfAnswers: { type: Number, default: 0 },
+	noOfAnswers: { type: Number, default: 0},
 	upVote: { type: [String] , default: [] },
 	downVote: { type:  [String] , default: [] },
 	userPosted: { type: String, required: "Question must have an auther" },
 	userID: { type: String },
 	askedOn: { type: Date, default: Date.now },
-    answr:[{
-        anserBody:String,
+    answer:[{
+        answerBody:String,
         userAnswered:String,
         userId:String,
         answeredOn:{ type: Date, default: Date.now },
