@@ -1,0 +1,101 @@
+/** @format */
+.policy-main {
+	margin: 5%;
+	font-family: sans-serif;
+}
+.policy-main-header {
+	margin-left: 20px;
+	
+}
+.policy-main-header h1{
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+.policy-main-header2 h3{
+	font-weight: 700;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+.policy-main-header2 p{
+	
+	margin-left: 20px;
+}
+
+.policy-main-card-header {
+	
+	margin-left: 20px;
+	margin-bottom: 20px;
+	
+}
+.policy-main-card-header h3{
+	
+font-weight: 600;
+	
+}
+
+
+.policy-main-card-box {
+	display: flex;
+
+	flex-wrap: wrap;
+}
+.policy-main-card {
+	margin: auto;
+	margin-bottom: 20px;
+	width: 385px;
+	height: 145px;
+	background: url(../../assite/images/policy-card.png) no-repeat;
+	background-size: cover;
+  
+	padding-bottom: 25px;
+	border-radius: 20px;
+}
+.policy-main-card p {
+	text-align: center;
+	font-weight: 600;
+	font-size: 20px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	color: aliceblue;
+}
+.policy-main-card button {
+	border: 1px solid black;
+	width: 90%;
+	border: none;
+	font-size: 1.4vw;
+	background: none;
+	font-weight: 600;
+	text-align: end;
+	margin-top: 0px;
+	
+	color: aliceblue;
+	height: 80%;
+}
+.policy-main-card button a{
+	  text-decoration: none;
+		color: #ffffff;
+}
+.policy-main-card img {
+	margin: 9px;
+	width: 20px;
+	color: aliceblue;
+}
+@media only screen and (max-width: 564px) {
+	.policy-main-card p {
+	
+		font-size: 12px;
+		
+	}
+	.policy-main-card {
+	
+		width: 310px;
+		height: 115px;
+	
+	}
+	.policy-main-card button {
+		font-size: 15px;
+	}
+}
+
+

@@ -1,26 +1,16 @@
-import React, { useEffect } from 'react';
-import './App.css';
-import './component/Navbar.css'
-import Routing from './component/Routing';
-import { fetchAllQuestions } from './action/questions';
-import { useDispatch } from 'react-redux';
+/** @format */
 
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "./component/login/Navbar";
+import Routing from "./component/Routing";
+import './component/login/login.css'
 
-
-function App() {
-  const dispatch = useDispatch()
-useEffect(()=>{
-dispatch(fetchAllQuestions())
-},[dispatch])
-
-
-
-  return (
-    <>
-      <Routing/>
-
-    </>
-  );
+export default function App() {
+	return (
+		<BrowserRouter>
+			<Navbar />
+			<Routing />
+		</BrowserRouter>
+	);
 }
-
-export default App;

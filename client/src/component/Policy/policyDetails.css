@@ -1,0 +1,52 @@
+/** @format */
+
+.policy-detail-main {
+    margin-top: 20px;
+	display: flex;
+	
+}
+.policy-detail-left {
+	width: 67%;
+	padding: 15px;
+	
+}
+.policy-detail-left h1 {
+    color: #323232;;
+	font-family: "Open Sans";
+}
+.policy-detail-left h3 {
+	color: #c3562b;
+	font-size: 32px;
+}
+.policy-detail-left p {
+	font-family: "Open Sans";
+	font-size: 28px;
+    color: #000000;;
+}
+.policy-detail-Right {
+	font-family: "Open Sans";
+
+	text-align: right;
+	width: 30%;
+}
+.policy-details-left-box{
+    margin: 10px;
+	background: url('../../assite/images/Background-policy-details.jpg') no-repeat;
+	background-size: cover;
+	padding: 10px;
+}
+.policy-detais-rigth-box .policy-main-card {
+    margin-bottom: 0px;
+    margin-right: 0px;
+	height: 114px;
+	
+	width: 352px;
+}
+.policy-detail-Right-box .policy-main-card button {
+	margin-right: -12px;
+	/* margin-right: 17px; */
+}
+.policy-detail-Right-box .policy-main-card img {
+	/* margin-right: -12px; */
+	margin-right: 17px;
+}

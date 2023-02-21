@@ -1,19 +1,43 @@
-import React from 'react'
-import RightSidebar from  '../../component/RightSidebar/RightSidebar'
-import HomeMainebar from './HomeMainebar'
-import LeftSidebar from '../../component/LeftSidebar/LeftSidebar'
+import React, { useState, useEffect } from 'react';
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from '../firebase/firebase';
+import { signOut } from "firebase/auth";
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+
 const Home = () => {
+  const [email , setEmail]=useState('');
+  const navigate = useNavigate();
+  const Role = useSelector(state => state.role)
+ 
+  const signOutUser = (user) => {
+    if(user)
+    signOut(auth)
+  navigate('/login')
+}
+    useEffect(()=>{
+        onAuthStateChanged(auth, (user) => {
+          // console.log("home page", user.email);
+            if (user) {
+              console.log(user);
+              setEmail(user.email)
+           
+            } else {
+              // User is signed out
+              console.log("user is logged out")
+            }
+          });
+         
+    }, [])
+ 
   return (
-    <div className='home-container-1'>
-      
-   <LeftSidebar/>
-      <div className='home-container-2'>
-        <HomeMainebar/>
-        <RightSidebar/>
-      </div>
-   
-      </div>
+    <section className='form-login'>        
+    <h1>Welcome to our Home Page</h1>
+    {/* <h3>Your role is {Role.role}</h3> */}
+    <h1>{email}</h1>
+    <button onClick={ signOutUser}>Sign out</button>
+    </section>
   )
 }
- 
-export default Home;
+
+export default Home

@@ -1,0 +1,156 @@
+/** @format */
+
+.login-cantainer {
+	padding: 20px;
+	padding-top: 30px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: #323232;
+}
+.Left-login {
+	width: 50%;
+}
+.Left-login img {
+	margin-top: -60px;
+	margin-left: -33px;
+	width: 50%;
+}
+
+.Right-login {
+	width: 50%;
+	border-left: 1px solid wheat;
+	text-align: center;
+}
+
+.Right-login h1 {
+	color: aliceblue;
+}
+.login-type p {
+	font-size: 15px;
+	font-weight: 600;
+}
+.login-input-username {
+	width: 80%;
+	border-radius: 8px;
+	margin: 10px;
+	padding: 10px;
+	padding-left: 57px;
+	background-color: #928e8e;
+}
+.login-input-password {
+	width: 80%;
+	border-radius: 8px;
+	margin: 10px;
+	padding: 10px;
+	padding-left: 57px;
+	background-color: #928e8e;
+}
+
+.login-username-icon {
+	width: 45px;
+	position: absolute;
+	margin-top: 20px;
+	padding-left: 12px;
+	border-right: 2px solid #323232;
+	padding-right: 3px;
+	margin-left: 5px;
+}
+.login-password-icon {
+	width: 45px;
+	margin-left: 5px;
+	position: absolute;
+	margin-top: 20px;
+	padding-left: 14px;
+	border-right: 2px solid #323232;
+	padding-right: 3px;
+}
+
+.login-checkbox-box {
+	display: inline-flex;
+	width: 80%;
+}
+.login-checkbox-box input {
+	width: 40px;
+	margin-right: 0%;
+	margin-top: 0px;
+}
+.login-forget-password {
+	width: 100%;
+	text-align: end;
+	font-size: 1.6vw;
+	color: aliceblue;
+	margin-top: 5px;
+}
+.login-remember-me {
+	width: 66%;
+	font-size: 1.6vw;
+	color: aliceblue;
+	margin-top: 5px;
+}
+.login-button {
+	margin-top: 20px;
+	width: 80%;
+	border-radius: 5px;
+	border: 5px solid #323232;
+	padding: 0px;
+	font-size: 3vw;
+	background: url("../../assite/images/button-background.JPG") no-repeat;
+	background-size: cover;
+	font-weight: 700;
+}
+.login-type-navbar {
+	display: flex;
+	color: aliceblue;
+	list-style: none;
+	justify-content: center;
+	width: 80%;
+	margin: auto;
+	margin-top: 5%;
+	margin-bottom: 20px;
+}
+a.login-type {
+	margin: auto;
+	text-decoration: none;
+	color: aliceblue;
+	font-size: 1.6vw;
+}
+
+.active {
+	border-bottom: 2px solid white;
+}
+@media only screen and (max-width: 600px) {
+	.Left-login {
+		display: none;
+	}
+
+	.Right-login {
+		width: 100%;
+		border: none;
+	}
+	.login-remember-me {
+		font-size: 10px;
+	}
+	.login-forget-password {
+		font-size: 10px;
+	}
+	.login-button {
+		font-size: 15px;
+
+		font-weight: 700;
+	}
+	.login-type p {
+		font-size: 15px;
+	}
+}
+
+.form-login {
+	text-align: center;
+}
+.nav-item-login {
+	position: absolute;
+	right: 32px;
+	font-weight: 600;
+	display: flex;
+}
+

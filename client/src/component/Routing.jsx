@@ -1,39 +1,31 @@
-import React from 'react'
-import {
-   
-    Route,
-    Routes
-  } from "react-router-dom";
-  import Home from './Home/Home';
-  import About from './About';
-import Navbar from './Navbar';
-import Auth from './Auth/Auth';
-import QuestionsLink from './Pages/QuestionsLink';
-import AskQuestion from './AskQuestion/AskQuestion';
-import DisplayQuestion from './Questions/DisplayQuestion';
+/** @format */
+
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import AddPolicy from "./Admin/AddPolicy";
+import Home from "./home/Home";
+import SignIn from "./login/SignIn";
+import Policy from "./Policy/Policy";
+import PolicyDetailsMain from "./Policy/PolicyDetailsMain";
 
 const Routing = () => {
-  return (
-   <>
-  <div>
-    <Navbar/>
-   
-      <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/Auth" element={<Auth/>} />
-          <Route path="/team" element={<Auth/>} />
-          <Route path="/Questions" element={<QuestionsLink/>} />
-          <Route path="/AskQuestion" element={<AskQuestion/>} />
-          <Route path="/Questions/:id" element={<DisplayQuestion/>}/>
-          
-        </Routes>
-      </div>
-      
-</>
-   
-   
-  )
-}
+	return (
+		
+		
+		<Routes>
+			<Route path='/addpolicy' element={<AddPolicy/>} />
+			<Route path='/auth' element={<SignIn />} />
+			<Route path='/policy' element={<Policy />} />
+			<Route path='/login' element={< SignIn/>} />
+			<Route path='/login/hr' element={< SignIn/>} />
+			<Route path='/login/Recruiter' element={< SignIn/>} />
+			<Route path='/login/employee' element={< SignIn/>} />
+			<Route path='/policy/policyDetails' element={< PolicyDetailsMain/>}/>
+			<Route path="/policy/:id" element={<PolicyDetailsMain/>}/>
+		</Routes>
+	
+	);
+};
 
-export default Routing
+
+export default Routing;
